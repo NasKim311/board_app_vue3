@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     singleQuote: true, // 문자열은 따옴표로 formatting
     semi: true, //코드 마지막에 세미콜른이 없게 formatting
     useTabs: false, //탭의 사용을 금하고 스페이스바 사용으로 대체하게 formatting
