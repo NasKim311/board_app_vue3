@@ -1,17 +1,13 @@
 <script setup>
-import NavBar from '@/layouts/NavBar.vue';
+import Header from '@/layouts/Header.vue';
+import Container from '@/layouts/Container.vue';
+import Footer from '@/layouts/Footer.vue';
 </script>
 
 <template>
-    <header>
-        <NavBar></NavBar>
-    </header>
-
-    <main>
-        <div class="container py-4">
-            <h2>Hello Vue3</h2>
-        </div>
-    </main>
+    <Header />
+    <Container />
+    <Footer />
 </template>
 
 <style scoped></style>
