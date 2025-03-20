@@ -1,9 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
-function goPage(path) {
+function goPage(path: string) {
     router.push(path);
 }
 </script>
@@ -20,7 +20,7 @@ function goPage(path) {
                 <div class="card-header">
                     <div class="row justify-content-between gap-3">
                         <div class="col-auto">
-                            <button class="btn btn-primary" type="button" @click="goPage('/board/add')">신규등록</button>
+                            <button class="btn btn-primary" type="button" @click="goPage('board/add')">신규등록</button>
                         </div>
                         <div class="col-auto list-filter">
                             <div class="row gap-2">

@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import type { RouteRecordRaw } from 'vue-router';
+
 import Home from '@/views/Home.vue';
 import BoardList from '@/views/board/BoardList.vue';
 import BoardUpdate from '@/views/board/BoardUpdate.vue';
 
-const routes = [
+const routes: RouteRecordRaw[] = [
     {
         path: '/',
         component: Home,
@@ -24,7 +26,7 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory('/'),
-    routes: routes,
+    routes,
 });
 
 export default router;
