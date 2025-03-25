@@ -1,5 +1,5 @@
 <template>
-    <div>홈 화면 입니다.</div>
+    <div></div>
 </template>
 
 <script setup lang="ts">
