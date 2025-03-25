@@ -1,11 +1,11 @@
 import http from '@/core/http.service';
-import BaseService from '@/services/base.service'; // BaseService를 사용한다고 가정
+import BaseService from '@/services/base.service';
 import { BoardDTO, BoardSearchDTO, BoardUpdateDTO } from '@/models/board';
 import type { Page } from '@/core/page';
 
 class BoardService extends BaseService {
     public getList(search: BoardSearchDTO): Promise<Page<BoardDTO>> {
-        return super.request(http.get('/boards', { params: search }));
+        return super.request(http.get('/boards', search));
     }
 
     public get(id: number): Promise<BoardDTO> {
@@ -25,6 +25,5 @@ class BoardService extends BaseService {
     }
 }
 
-// 인스턴스를 하나로 만들어서 관리
 let boardService;
 export default boardService = new BoardService();
