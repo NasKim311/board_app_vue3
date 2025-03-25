@@ -1,0 +1,1028 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 800;
+    font-display: swap;
+    src:
+        local('Pretendard ExtraBold'),
+        url('../fonts/Pretendard/Pretendard-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src:
+        local('Pretendard Bold'),
+        url('../fonts/Pretendard/Pretendard-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 600;
+    font-display: swap;
+    src:
+        local('Pretendard SemiBold'),
+        url('../fonts/Pretendard/Pretendard-SemiBold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-display: swap;
+    src:
+        local('Pretendard Medium'),
+        url('../fonts/Pretendard/Pretendard-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src:
+        local('Pretendard Regular'),
+        url('../fonts/Pretendard/Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 300;
+    font-display: swap;
+    src:
+        local('Pretendard Light'),
+        url('../fonts/Pretendard/Pretendard-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 200;
+    font-display: swap;
+    src:
+        local('Pretendard ExtraLight'),
+        url('../fonts/Pretendard/Pretendard-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 100;
+    font-display: swap;
+    src:
+        local('Pretendard Thin'),
+        url('../fonts/Pretendard/Pretendard-Thin.woff') format('woff');
+}
+@font-face {
+    font-family: 'reforma 1969';
+    font-style: normal;
+    font-weight: 300;
+    src:
+        local('Reforma 1969'),
+        url(https://fonts.cdnfonts.com/s/17804/Reforma1969-Blanca.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'reforma 1969';
+    font-style: normal;
+    font-weight: 500;
+    src:
+        local('Reforma 1969'),
+        url(https://fonts.cdnfonts.com/s/17804/Reforma1969-Gris.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'reforma 1969';
+    font-style: normal;
+    font-weight: 700;
+    src:
+        local('Reforma 1969'),
+        url(https://fonts.cdnfonts.com/s/17804/Reforma1969-Negra.woff) format('woff');
+}
+
+body {
+    font-family:
+        'Pretendard',
+        'Source Sans Pro',
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        'Helvetica Neue',
+        Arial,
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol';
+}
+
+b,
+strong {
+    font-weight: 500;
+}
+
+button.none {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.custom-control {
+    min-height: 1.4rem;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-size: 0.95rem;
+}
+
+.form-check-label {
+    font-size: 0.95rem;
+}
+
+.wrapper .content-wrapper .content-header h1 font {
+    vertical-align: inherit;
+}
+
+.wrapper .pickr .pcr-button {
+    width: 100%;
+}
+
+.wrapper .color-box {
+    width: 40px;
+    height: 15px;
+    display: inline-block;
+}
+
+.wrapper .fc {
+    background-color: white;
+}
+
+.wrapper .fc .fc-icon.fc-icon-chevron-left {
+    display: none;
+}
+
+.wrapper .fc .fc-icon.fc-icon-chevron-right {
+    display: none;
+}
+
+.wrapper .fc .fc-toolbar-chunk {
+    display: inherit;
+}
+
+.wrapper .fc .fc-event-title.fc-sticky {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.wrapper .calendar.mini {
+    background-color: white;
+}
+/* 
+.wrapper-cal .content-header {
+	height: 55px;
+} */
+/* 
+.wrapper-cal .content-wrapper ul {
+	list-style-type: none;
+	margin: 0;
+	width: 100%;
+}
+
+.wrapper-cal .content-wrapper ul li {
+	float: left;
+	margin-right: 3px;
+} */
+
+.wrapper-cal .content-wrapper ul li select {
+    /* height: 30px;
+	line-height: 30px;
+	max-width: 200px; */
+    font-size: 0.9rem;
+}
+/* 
+.wrapper-cal .content-wrapper ul li select optgroup {
+	font-size: 13px;
+} */
+/* 
+.wrapper-cal .content-wrapper ul li input {
+	height: 30px;
+	line-height: 30px;
+} */
+
+.wrapper-cal .content-wrapper ul li .input-group {
+    float: right;
+    margin-top: 0px;
+}
+
+.wrapper-cal .content-wrapper ul li .input-group .input-group-append {
+    height: 30px;
+    line-height: 30px;
+}
+
+.wrapper-cal span.pipe {
+    font-weight: 800;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 0.5em;
+}
+
+.wrapper-list .card .card-header {
+    padding: 7px;
+}
+
+.wrapper-list .card .card-header .card-header-left {
+    float: left;
+}
+
+.wrapper-list .card .card-header .card-header-left button {
+    height: 30px;
+    font-size: 12px;
+}
+
+.wrapper-list .card .card-header .card-header-right {
+    float: right;
+}
+
+.wrapper-list .card .card-header .card-header-right ul {
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+}
+
+.wrapper-list .card .card-header .card-header-right ul li {
+    float: left;
+    margin-right: 3px;
+}
+
+.wrapper-list .card .card-header .card-header-right ul li select {
+    /* height: 30px;
+	line-height: 30px;
+	max-width: 200px; */
+    font-size: 0.9rem;
+}
+
+.wrapper-list .card .card-header .card-header-right ul li select optgroup {
+    font-size: 0.9rem;
+}
+/* 
+.wrapper-list .card .card-header .card-header-right ul li input {
+	height: 30px;
+	line-height: 30px;
+}
+
+.wrapper-list .card .card-header .card-header-right ul li .input-group {
+	float: right;
+	margin-top: 0px;
+}
+
+.wrapper-list .card .card-header .card-header-right ul li .input-group .input-group-append {
+	height: 30px;
+	line-height: 30px;
+}
+*/
+
+.card-header .list-filter .form-control {
+    font-size: 0.9rem;
+}
+
+.card-title {
+    font-size: 1rem;
+}
+
+.wrapper-list .card .card-body table thead {
+    font-size: 0.95rem;
+}
+
+.wrapper-list:not(.wrapper-cal) .card .card-body table thead th {
+    padding: 0.45rem;
+    color: #495057;
+    background-color: #f2f4f5;
+    border-color: #dee2e6;
+}
+
+.wrapper-list .card .card-body table thead th .fa-sort {
+    cursor: pointer;
+}
+/* 
+.wrapper-list .card .card-body table tbody {
+	font-size: 13px;
+} */
+
+.wrapper-list:not(.wrapper-cal) .card .card-body table tbody tr td {
+    font-size: 0.95rem;
+    padding: 0.45rem;
+}
+
+.wrapper-list .card-body.p-0.first-last-0 .table tbody > tr > td:first-of-type {
+    padding-left: 0.45rem;
+}
+
+.wrapper-list .card-body.p-0.first-last-0 .table tbody > tr > td:last-of-type {
+    padding-right: 0.45rem;
+}
+/* 
+.wrapper-list .card .card-body table tbody tr td button {
+	font-size: .7rem;
+} */
+
+.wrapper-list .card .card-body table tbody tr td.checkbox {
+    vertical-align: baseline !important;
+}
+
+.wrapper-list .card .card-footer {
+    padding: 7px;
+}
+
+.wrapper-list .card .card-footer .pagination {
+    font-size: 13px;
+    margin: 0;
+}
+
+.wrapper-view .card .card-header {
+    padding: 7px;
+}
+
+.wrapper-view .card .card-header .card-header-left {
+    float: left;
+}
+
+.wrapper-view .card .card-header .card-header-left button {
+    height: 30px;
+    font-size: 12px;
+}
+
+.wrapper-view .card .card-header .card-header-right {
+    float: right;
+}
+
+.wrapper-view .card .card-header .card-header-right ul {
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+}
+
+.wrapper-view .card .card-header .card-header-right ul li {
+    float: left;
+    margin-right: 3px;
+}
+
+.wrapper-view .card .card-header .card-header-right ul li select {
+    height: 30px;
+    line-height: 30px;
+    max-width: 200px;
+    font-size: 13px;
+}
+
+.wrapper-view .card .card-header .card-header-right ul li select optgroup {
+    font-size: 13px;
+}
+
+.wrapper-view .card .card-header .card-header-right ul li input {
+    height: 30px;
+    line-height: 30px;
+}
+
+.wrapper-view .card .card-header .card-header-right ul li .input-group {
+    float: right;
+    margin-top: 0px;
+}
+
+.wrapper-view .card .card-header .card-header-right ul li .input-group .input-group-append {
+    height: 30px;
+    line-height: 30px;
+}
+
+.wrapper-view .card .card-body .form-group {
+    margin-bottom: 4px;
+}
+
+.wrapper-view .card .card-body .form-group ul {
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+}
+
+.wrapper-view .card .card-body .form-group ul {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+.wrapper-view .card .card-body .form-group ul li {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.wrapper-view .card .card-body .form-group ul li img {
+    max-width: 200px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.wrapper-view .card .card-body .form-group .card-header {
+    font-size: 14px;
+}
+
+.wrapper-view .card .card-body .form-group .card-header .btn-group :first-child {
+    width: 300px;
+}
+
+.wrapper-view .card .card-body .form-group table thead {
+    font-size: 14px;
+}
+
+.wrapper-view .card .card-body .form-group table thead tr :first-child {
+    vertical-align: middle !important;
+}
+
+.wrapper-view .card .card-body .form-group table thead th {
+    padding: 5px !important;
+    color: #495057;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.wrapper-view .card .card-body .form-group table thead th .fa-sort {
+    cursor: pointer;
+}
+
+.wrapper-view .card .card-body .form-group table tbody {
+    font-size: 13px;
+}
+
+.wrapper-view .card .card-body .form-group table tbody tr :first-child {
+    vertical-align: middle !important;
+}
+
+.wrapper-view .card .card-body .form-group table tbody tr td {
+    padding: 5px !important;
+}
+
+.wrapper-view .card .card-body .form-group table tbody tr td button {
+    font-size: 10px;
+}
+
+.wrapper-view .card .card-body .form-group table tbody tr td.checkbox {
+    vertical-align: baseline !important;
+}
+
+.wrapper-view .card .card-footer {
+    padding: 7px;
+}
+
+.wrapper-view .card .card-footer .pagination {
+    font-size: 13px;
+    margin: 0;
+}
+
+div.modal .modal-body {
+    overflow: auto;
+}
+
+.modal-content .btn-close {
+    font-weight: 800;
+}
+
+table.table-padding-1 tbody tr td {
+    padding: 0.45rem 0.8rem !important;
+}
+
+/********************************* custom *********************************/
+
+/*********** z-index ***********/
+.react-datepicker-popper {
+    z-index: 2 !important;
+}
+
+/*********** margin, padding ***********/
+.mr_5 {
+    margin-right: 5px;
+}
+
+.mr_10 {
+    margin-right: 10px;
+}
+
+.mt_5 {
+    margin-top: 5px;
+}
+
+.mb_5 {
+    margin-bottom: 5px;
+}
+
+.mb_10 {
+    margin-bottom: 10px;
+}
+
+.pt_10 {
+    padding-top: 10px;
+}
+
+/*********** gap ***********/
+.gap-0 {
+    gap: 0;
+}
+.gap-1 {
+    gap: 0.25rem 0;
+}
+.gap-2 {
+    gap: 0.5rem 0;
+}
+.gap-3 {
+    gap: 1rem 0;
+}
+.gap-4 {
+    gap: 1.5rem 0;
+}
+
+/*********** common ***********/
+.customReset {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: normal;
+    vertical-align: baseline;
+    outline-style: none;
+}
+
+.custumTable {
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.clear:after {
+    content: '.';
+    display: block;
+    clear: both;
+    height: 0;
+    font-size: 0;
+    visibility: hidden;
+}
+
+.fileInputHidden {
+    position: relative;
+}
+
+.fileInputHidden input[type='file'] {
+    width: 100%;
+    height: 46px;
+    font-size: 30px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    padding: 0 !important;
+    outline-style: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.fileInputHidden input[type='file']::-webkit-file-upload-button {
+    cursor: pointer;
+}
+
+.fileInputHidden .btn_file {
+    display: block;
+    width: 100%;
+    height: 46px;
+    color: #002663;
+    border: 1px solid #003589;
+    background-color: #fff;
+    border-radius: 23px;
+    overflow: visible;
+    /* box-shadow: 0px 3px 8px rgba(0, 53, 137, 0.15); */
+}
+
+/*********** checkbox ***********/
+
+.checkbox_ui {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.checkbox_ui.type1 input[type='checkbox'] {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.checkbox_ui.type1 input[type='checkbox'] + label {
+    display: inline-block;
+    background-image: none;
+    background-repeat: no-repeat;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    font-weight: 700;
+    font-size: 15px;
+    color: #666;
+    font-style: normal;
+    line-height: 1.6;
+    width: auto;
+    height: auto;
+    padding-left: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox_ui.type1.default input[type='checkbox'] + label {
+    width: 24px;
+    height: 24px;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.checkbox_ui.type1 input[type='checkbox'] + label:before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('/assets/images/common/check_bg1.png');
+    background-repeat: no-repeat;
+    background-size: 24px auto;
+    background-position: 0 0;
+    position: absolute;
+    left: 0;
+    top: -1px;
+}
+
+.checkbox_ui.type1 input[type='checkbox']:checked + label:before {
+    background-position: 0 -24px;
+}
+
+.checkbox_ui.type1 input[type='checkbox']:disabled + label {
+    color: #999;
+}
+
+.checkbox_ui.type1.default input[type='checkbox']:disabled + label {
+    opacity: 0.3;
+}
+
+.checkbox_ui.type1 input[type='checkbox']:disabled + label .em1 {
+    color: #999;
+}
+
+/*********** radio ***********/
+.radio_ui {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.radio_ui.type1 input[type='radio'] {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.radio_ui.type1 input[type='radio'] + label {
+    display: inline-block;
+    background-image: none;
+    background-repeat: no-repeat;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    font-weight: 700;
+    font-size: 15px;
+    color: #666;
+    font-style: normal;
+    line-height: 1.6;
+    width: auto;
+    height: auto;
+    padding-left: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio_ui.type1.default input[type='radio'] + label {
+    width: 24px;
+    height: 24px;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.radio_ui.type1 input[type='radio'] + label:before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url('/assets/images/common/radio_bg1.png');
+    background-repeat: no-repeat;
+    background-size: 24px auto;
+    background-position: 0 0;
+    position: absolute;
+    left: 0;
+    top: -1px;
+}
+
+.radio_ui.type1 input[type='radio']:checked + label:before {
+    background-position: 0 -24px;
+}
+
+.radio_ui.type1 input[type='radio']:disabled + label {
+    color: #999;
+}
+
+.radio_ui.type1.default input[type='radio']:disabled + label {
+    opacity: 0.3;
+}
+
+.radio_ui.type1 input[type='radio']:disabled + label .em1 {
+    color: #999;
+}
+
+/*********** color picker ***********/
+.color-picker-outer {
+    position: relative;
+}
+.color-picker-wrapper {
+    position: absolute;
+    left: 7px;
+    top: 20px;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    z-index: 2;
+    padding: 1rem;
+    border-radius: 0 1rem 1rem 1rem;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*********** 레이아웃 조정 ***********/
+.wrapper-list .card .card-header {
+    padding: 15px 20px;
+}
+
+.wrapper-list .card .card-footer {
+    padding: 15px 20px;
+}
+
+.card-footer.no-bg {
+    background-color: transparent;
+    border: none;
+    padding-top: 0;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.badge {
+    font-weight: 400;
+    padding: 0.3em 0.4em 0.15em;
+}
+
+.badge-block {
+    display: inline-block;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 0;
+}
+
+/* 
+.card-body {
+	padding: 20px !important;
+} */
+
+table thead th,
+table tbody td {
+    min-height: 26px;
+}
+
+/*********** 버튼 크기 조정 ***********/
+.wrapper-list .card .card-header .card-header-left button {
+    height: inherit;
+    font-size: inherit;
+}
+
+/*********** side bar ***********/
+.main-sidebar .logo {
+    padding: 12px 20px 12px 20px;
+}
+
+.main-sidebar .logo span {
+    font-size: 26px;
+    color: #fff;
+}
+
+.sidebar .info {
+    width: 100%;
+}
+
+.sidebar .info .user {
+    float: left;
+    color: #fff;
+}
+
+.sidebar .info .btn_logout {
+    /* float: right; */
+    position: absolute;
+    right: 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    padding: 3px 15px 3px 15px;
+    border-radius: 10px;
+    background: #e1e7ed;
+    margin-top: 3px;
+}
+
+.main-sidebar .brand-text,
+.main-sidebar .logo-xl,
+.main-sidebar .logo-xs {
+    font-family: 'reforma 1969';
+}
+
+.brand-link {
+    padding: 0.8125rem 0.8125rem;
+}
+
+.nav-sidebar .nav-link p {
+    white-space: nowrap;
+}
+
+/*********** datepicker ***********/
+.datepicker-with-btn {
+    display: flex;
+    width: 100%;
+}
+
+.datepicker-with-btn .react-datepicker-wrapper {
+    width: 100%;
+}
+
+/*********** 로그인 ***********/
+.login-page {
+    height: auto;
+    min-height: 495px !important;
+}
+
+.login-logo,
+.register-logo {
+    font-family: 'reforma 1969';
+}
+
+.login-wrapper {
+    width: 100vw;
+}
+
+.login-box {
+    margin: 0 auto;
+}
+
+.login-box .btn_login {
+    margin-top: -15px;
+}
+
+/*********** 메인 ***********/
+.main-container ul {
+    padding-left: 12px;
+}
+
+/*********** 예약관리 ***********/
+
+/*********** 투어관리 ***********/
+.trip-table:not(:first-child) {
+    margin-top: 1rem;
+}
+
+.trip-table thead th {
+    text-align: center;
+}
+
+.trip-table tbody td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/*********** 사고관리 ***********/
+.page-accident .modal-backdrop {
+    display: none;
+}
+
+.page-accident .modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: none;
+    width: 100%;
+    height: auto;
+    overflow: initial;
+}
+
+.page-accident .modal .accident-detail {
+    position: absolute;
+    top: 60px;
+    margin: 0;
+    width: 500px;
+    height: 600px;
+}
+
+.page-accident .modal .accident-detail.monday {
+    left: 15.4%;
+}
+
+.page-accident .modal .accident-detail.tuesday {
+    left: 29%;
+}
+
+.page-accident .modal .accident-detail.wednesday {
+    left: 43%;
+}
+
+.page-accident .modal .accident-detail.thursday {
+    left: 56.6%;
+}
+
+.page-accident .modal .accident-detail.friday {
+    right: 43%;
+}
+
+.page-accident .modal .accident-detail.saturday {
+    right: 29%;
+}
+
+.page-accident .modal .accident-detail.sunday {
+    right: 15.4%;
+}
+
+.vehicle-table tbody td {
+    vertical-align: middle;
+}
+
+.accident-detail .modal-footer {
+    border: none;
+    padding: 0;
+}
+
+/*********** 회계관리 ***********/
+.accounting-summary .item {
+    text-align: center;
+}
+
+.accounting-summary .item:not(:first-child) {
+    border-left: 1px solid #c8c8c8;
+}
+
+.accounting-summary .item strong {
+    font-weight: 600;
+}
+
+.accounting-summary .item .lead {
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+}
+
+.accounting-summary .item .lead .num {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.accounting-summary .item .lead .unit {
+    font-weight: 400;
+    margin-left: 0.1rem;
+}
+
+/*********** 가이드 정산 관리 ***********/
+.guide-accounting-table table tbody tr td {
+    padding: 0.45rem 0.8rem !important;
+    vertical-align: middle;
+}
+
+/*# sourceMappingURL=maps/style.css.map */
