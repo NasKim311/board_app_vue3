@@ -1,3 +1,11 @@
+import { SearchDTO } from './search';
+
+export class BoardSearchDTO extends SearchDTO {
+    title: string = '';
+
+    username: string = '';
+}
+
 export class BoardDTO {
     id: number = 0;
 
@@ -10,4 +18,10 @@ export class BoardDTO {
     regdate?: Date;
 
     moddate?: Date | null;
+}
+
+export class BoardUpdateDTO {
+    title: string = '';
+
+    content: string = '';
 }
