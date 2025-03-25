@@ -1,10 +1,12 @@
 import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueDevTools from 'vite-plugin-vue-devtools';
+import { loadEnv } from 'vite';
 
-const isProduction = process.env.NODE_ENV === 'production';
+// Vite에서 환경 체크
+const env = loadEnv(process.env.NODE_ENV, process.cwd());
+const isProduction = env.MODE === 'production';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -19,10 +21,7 @@ export default defineConfig({
         open: true,
         strictPort: true,
     },
-    define: {
-        'process.env': {
-            NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-            BASE_API: JSON.stringify(isProduction ? '' : 'http://localhost:8080'),
-        },
-    },
+
+    // 'define'에서 import.meta.env를 수정할 필요 없음
+    // 대신 .env 파일을 통해 BASE_API를 설정하고, 자동으로 import.meta.env.BASE_API를 사용할 수 있음
 });
