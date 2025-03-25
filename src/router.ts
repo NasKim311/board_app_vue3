@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
-import layoutDefault from './layouts/default.layout.vue';
-import layoutEmpty from './layouts/empty.layout.vue';
+import layoutDefault from '@/layouts/Default.layout.vue';
+import layoutEmpty from '@/layouts/Empty.layout.vue';
 
 const routes: RouteRecordRaw[] = [
     {
@@ -19,12 +19,12 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/login',
         component: layoutEmpty,
-        children: [{ name: 'login', path: '', component: () => import('@/components/login/Login.vue') }],
+        children: [{ path: '', name: 'Login', component: () => import('@/components/login/Login.vue') }],
     },
     {
         path: '/:pathMatch(.*)*',
         component: layoutEmpty,
-        children: [{ path: '', component: () => import('@/components/NoPage.vue') }],
+        children: [{ path: '', name: 'NoPage', component: () => import('@/components/NoPage.vue') }],
     },
 ];
 
@@ -39,7 +39,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     if (to.matched.some((record) => record.meta.requiresAuth)) {
         if (!localStorage.getItem('token')) {
-            next({ name: 'login', query: { return: location.pathname.replace('/', '') } });
+            next({ name: 'Login', query: { return: location.pathname.replace('/login', '') } });
         } else {
             next();
         }
