@@ -69,7 +69,7 @@
                 </table>
             </div>
             <div class="card-footer d-flex justify-content-center align-items-center">
-                <el-pagination v-model:current-page="search.page" v-model:page-size="search.size" :total="search.total" @current-change="handlePageChange" layout="prev, pager, next" />
+                <el-pagination v-model:current-page="search.page" v-model:page-size="search.size" :total="search.total" @current-change="onHandlePageChange" layout="prev, pager, next" />
             </div>
         </div>
     </div>
@@ -107,7 +107,7 @@ function onSearch() {
     getData();
 }
 
-function handlePageChange(page: number) {
+function onHandlePageChange(page: number) {
     search.value.page = page;
     getData();
 }
@@ -122,11 +122,11 @@ async function getData() {
         searchDto[searchType.value] = keyword.value;
     }
     searchDto.page -= 1;
-    console.log('searchDto {getData}', searchDto);
+    // console.log('searchDto {getData}', searchDto);
 
     try {
         const res = await boardService.getList(searchDto);
-        console.log('res {getData}', res);
+        // console.log('res {getData}', res);
 
         items.value = res.content;
         search.value.total = res.totalElements;

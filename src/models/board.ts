@@ -18,6 +18,10 @@ export class BoardDTO {
     regdate!: Date;
 
     moddate?: Date | null;
+
+    previousId: number = 0;
+
+    nextId: number = 0;
 }
 
 export class BoardUpdateDTO {

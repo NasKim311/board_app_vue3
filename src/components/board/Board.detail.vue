@@ -36,10 +36,10 @@
     <hr class="my-4" />
     <div class="row pt-4 g-2">
         <div class="col-auto">
-            <button class="btn btn-secondary">이전글</button>
+            <button @click="onMovePage('prev')" class="btn btn-secondary">이전글</button>
         </div>
         <div class="col-auto">
-            <button class="btn btn-secondary">다음글</button>
+            <button @click="onMovePage('next')" class="btn btn-secondary">다음글</button>
         </div>
         <div class="col-auto me-auto"></div>
         <div class="col-auto">
@@ -58,7 +58,7 @@
 import { BoardDTO } from '@/models/board';
 import boardService from '@/services/board.service';
 import { dateFormat } from '@/utils/Date.util';
-import { onMounted, onUnmounted, onUpdated, ref } from 'vue';
+import { onMounted, onUnmounted, onUpdated, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 
 /* ***************************************************************************************** */
@@ -75,17 +75,37 @@ onMounted(() => {
     getData(parseInt(props.id));
 });
 
-onUpdated(() => {});
+// props.id가 변경될 때만 getData 호출
+watch(
+    () => props.id,
+    (newId) => {
+        getData(parseInt(newId));
+    },
+);
 
 onUnmounted(() => {});
 
 /* ***************************************************************************************** */
 /* ************************************** PAGE ********************************************* */
 /* ***************************************************************************************** */
+function onMovePage(type: 'prev' | 'next') {
+    const targetId = type === 'prev' ? item.value.previousId : item.value.nextId;
+
+    if (targetId < 0) {
+        alert(type === 'prev' ? '이전글이 없습니다.' : '다음글이 없습니다.');
+        return;
+    }
+
+    router.push(`/board/${targetId}`);
+}
+
+/* ***************************************************************************************** */
+/* ************************************* BASIC ********************************************* */
+/* ***************************************************************************************** */
 async function getData(id: number) {
     try {
         const res = await boardService.get(id);
-        console.log('res {getData}', res);
+        // console.log('res {getData}', res);
 
         item.value = res;
     } catch (error) {
@@ -106,10 +126,6 @@ async function remove() {
         console.error(error);
     }
 }
-
-/* ***************************************************************************************** */
-/* ************************************* BASIC ********************************************* */
-/* ***************************************************************************************** */
 </script>
 
 <style scoped></style>
