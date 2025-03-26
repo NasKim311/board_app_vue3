@@ -34,9 +34,23 @@
         </div>
     </div>
     <hr class="my-4" />
-    <div class="pt-4">
-        <RouterLink to="/board" class="btn btn-secondary me-2">목록</RouterLink>
-        <RouterLink class="btn btn-success" :to="`/board/${props.id}/update`">수정</RouterLink>
+    <div class="row pt-4 g-2">
+        <div class="col-auto">
+            <button class="btn btn-secondary">이전글</button>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-secondary">다음글</button>
+        </div>
+        <div class="col-auto me-auto"></div>
+        <div class="col-auto">
+            <RouterLink to="/board" class="btn btn-secondary">목록</RouterLink>
+        </div>
+        <div class="col-auto">
+            <RouterLink class="btn btn-success" :to="`/board/${props.id}/update`">수정</RouterLink>
+        </div>
+        <div class="col-auto">
+            <button class="btn btn-danger" @click="remove">삭제</button>
+        </div>
     </div>
 </template>
 
@@ -45,10 +59,12 @@ import { BoardDTO } from '@/models/board';
 import boardService from '@/services/board.service';
 import { dateFormat } from '@/utils/Date.util';
 import { onMounted, onUnmounted, onUpdated, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 /* ***************************************************************************************** */
 /* *********************************** DECLARATION ***************************************** */
 /* ***************************************************************************************** */
+const router = useRouter();
 const props = defineProps<{ id: string }>();
 const item = ref<BoardDTO>(new BoardDTO());
 
@@ -72,6 +88,20 @@ async function getData(id: number) {
         console.log('res {getData}', res);
 
         item.value = res;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+async function remove() {
+    const isRemove = confirm('삭제하시겠습니까?');
+    if (!isRemove) return;
+
+    try {
+        const res = await boardService.remove(parseInt(props.id));
+
+        alert('삭제되었습니다.');
+        router.replace('/board');
     } catch (error) {
         console.error(error);
     }

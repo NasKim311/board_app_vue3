@@ -68,6 +68,9 @@ async function getData(id: number) {
 }
 
 async function save() {
+    const isSave = confirm('저장하시겠습니까?');
+    if (!isSave) return;
+
     const dto = PageUtil.deepCopy(item.value);
 
     if (!dto.title) {
