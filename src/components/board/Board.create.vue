@@ -1,24 +1,22 @@
 <template>
-    <div>
-        <div className="content-header">
-            <h1>
-                <span>게시판 등록</span>
-            </h1>
+    <div className="content-header">
+        <h1>
+            <span>게시판 등록</span>
+        </h1>
+    </div>
+    <hr class="my-4" />
+    <div className="container-fluid">
+        <div class="mb-3">
+            <label for="title" class="form-label">제목</label>
+            <input type="text" class="form-control" id="title" v-model="item.title" />
         </div>
-        <hr class="my-4" />
-        <div className="container-fluid">
-            <div class="mb-3">
-                <label for="title" class="form-label">제목</label>
-                <input type="text" class="form-control" id="title" v-model="item.title" />
-            </div>
-            <div class="mb-3">
-                <label for="content" class="form-label">내용</label>
-                <textarea class="form-control" id="content" rows="3" v-model="item.content"></textarea>
-            </div>
-            <div class="pt-4">
-                <RouterLink to="/board" class="btn btn-secondary me-2">목록</RouterLink>
-                <button class="btn btn-primary" @click="save">저장</button>
-            </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">내용</label>
+            <textarea class="form-control" id="content" rows="3" v-model="item.content"></textarea>
+        </div>
+        <div class="pt-4">
+            <RouterLink to="/board" class="btn btn-secondary me-2">목록</RouterLink>
+            <button class="btn btn-primary" @click="save">저장</button>
         </div>
     </div>
 </template>
