@@ -15,7 +15,7 @@ export class BoardDTO {
 
     username: string = '';
 
-    regdate?: Date;
+    regdate!: Date;
 
     moddate?: Date | null;
 }
