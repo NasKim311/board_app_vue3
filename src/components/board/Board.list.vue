@@ -62,8 +62,8 @@
                                 </RouterLink>
                             </td>
                             <td>{{ item.username }}</td>
-                            <td>{{ dateFormat(item.regdate) }}</td>
-                            <td>{{ item.moddate ? dateFormat(item.moddate) : '-' }}</td>
+                            <td>{{ dateFormat(item.regdate, 'YYYY.MM.DD HH:mm:ss') }}</td>
+                            <td>{{ item.moddate ? dateFormat(item.moddate, 'YYYY.MM.DD HH:mm:ss') : '-' }}</td>
                         </tr>
                     </tbody>
                 </table>
