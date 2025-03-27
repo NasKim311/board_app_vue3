@@ -35,7 +35,7 @@ import PageUtil from '@/utils/Page.util';
 /* *********************************** DECLARATION ***************************************** */
 /* ***************************************************************************************** */
 const router = useRouter();
-const props = defineProps<{ id: string }>();
+const props = defineProps<{ id?: string }>();
 const item = ref<BoardUpdateDTO>(new BoardUpdateDTO());
 const isUpdate = ref<boolean>(props.id ? true : false);
 
@@ -44,7 +44,7 @@ const isUpdate = ref<boolean>(props.id ? true : false);
 /* ***************************************************************************************** */
 onMounted(() => {
     // 수정 페이지로의 접근일 경우 데이터 조회
-    if (isUpdate.value) getData(parseInt(props.id));
+    if (isUpdate.value && props.id) getData(parseInt(props.id));
 });
 
 onUpdated(() => {});
@@ -82,7 +82,7 @@ async function save() {
         return;
     }
 
-    const req = isUpdate.value ? boardService.update(parseInt(props.id), dto) : boardService.add(dto);
+    const req = isUpdate.value && props.id ? boardService.update(parseInt(props.id), dto) : boardService.add(dto);
 
     try {
         const res = await req;
