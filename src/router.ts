@@ -7,13 +7,13 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/',
         component: layoutDefault,
-        // meta: { requiresAuth: true },
+        meta: { requiresAuth: true },
         children: [
             { path: '', name: 'Home', component: () => import('@/components/Home.vue') },
-            { path: '/board', name: 'BoardList', component: () => import('@/components/board/Board.list.vue') },
-            { path: '/board/add', name: 'BoardCreate', component: () => import('@/components/board/Board.update.vue') },
-            { path: '/board/:id', name: 'BoardDetail', component: () => import('@/components/board/Board.detail.vue'), props: true },
-            { path: '/board/:id/update', name: 'BoardUpdate', component: () => import('@/components/board/Board.update.vue'), props: true },
+            { path: 'board', name: 'BoardList', component: () => import('@/components/board/Board.list.vue') },
+            { path: 'board/add', name: 'BoardCreate', component: () => import('@/components/board/Board.update.vue') },
+            { path: 'board/:id', name: 'BoardDetail', component: () => import('@/components/board/Board.detail.vue'), props: true },
+            { path: 'board/:id/update', name: 'BoardUpdate', component: () => import('@/components/board/Board.update.vue'), props: true },
         ],
     },
     {
@@ -39,7 +39,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     if (to.matched.some((record) => record.meta.requiresAuth)) {
         if (!localStorage.getItem('token')) {
-            next({ name: 'Login', query: { return: location.pathname.replace('/login', '') } });
+            next({ name: 'Login', query: { r: to.fullPath } });
         } else {
             next();
         }

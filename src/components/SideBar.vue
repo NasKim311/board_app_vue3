@@ -7,11 +7,11 @@
         <div class="sidebar">
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="info">
-                    <RouterLink to="/" class="d-block">
+                    <RouterLink to="/" class="">
                         {{ userId }}
-                        &nbsp;
-                        <button @click="signOut" class="nav-icon fas customReset btn_logout">logout</button>
                     </RouterLink>
+                    &nbsp;
+                    <button @click="signOut" class="nav-icon fas customReset btn_logout">logout</button>
                 </div>
             </div>
 
@@ -30,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+import authService from '@/services/auth.service';
 import { onMounted, onUnmounted, onUpdated, ref } from 'vue';
 import { useRouter, RouterLink } from 'vue-router';
 
@@ -37,12 +38,14 @@ import { useRouter, RouterLink } from 'vue-router';
 /* *********************************** DECLARATION ***************************************** */
 /* ***************************************************************************************** */
 const router = useRouter();
-const userId = '김남수';
+const userId = ref<string>('');
 
 /* ***************************************************************************************** */
 /* ************************************ LIFECYCLE ****************************************** */
 /* ***************************************************************************************** */
-onMounted(() => {});
+onMounted(() => {
+    userId.value = authService.getUserId();
+});
 
 onUpdated(() => {});
 
@@ -55,7 +58,16 @@ onUnmounted(() => {});
 /* ***************************************************************************************** */
 /* ************************************* BASIC ********************************************* */
 /* ***************************************************************************************** */
-function signOut() {}
+async function signOut() {
+    try {
+        await authService.signOut();
+
+        // router.ts에서 router.beforeEach를 타기 위해 새로고침으로 라우팅 작업 시켜줌.
+        router.go(0);
+    } catch (error) {
+        console.error(error);
+    }
+}
 </script>
 
 <style scoped>
