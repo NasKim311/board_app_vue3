@@ -21,7 +21,7 @@
                             </div>
                             <div class="col-auto">
                                 <div class="input-group">
-                                    <input type="search" class="form-control" placeholder="Search" v-model="keyword" />
+                                    <input type="search" class="form-control" placeholder="Search" v-model="keyword" @keydown.enter="onSearch" />
                                     <button class="btn btn-outline-secondary" type="button" @click="onSearch">검색</button>
                                 </div>
                             </div>
